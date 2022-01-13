@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const worksResult = await graphql(
     `
       {
-        allMarkdownRemark(
+        worksGroup: allMarkdownRemark(
           filter: {fileAbsolutePath: {regex: "/(works)/"}}
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
@@ -54,6 +54,11 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        categoriesGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___categories) {
+            fieldValue
+          }
+        }
       }
     `
   )
@@ -64,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog posts pages.
   const posts = blogResult.data.blogGroup.edges
-  const works = worksResult.data.allMarkdownRemark.edges
+  const works = worksResult.data.worksGroup.edges
   
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
