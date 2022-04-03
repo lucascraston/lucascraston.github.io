@@ -22,7 +22,7 @@ const About = () => {
           <AboutSection>
             <div>
               <Avatar fluid={data.placeholderImage.childImageSharp.fluid} alt="user photo" />
-              <SubTitle>Developer</SubTitle>
+              <SubTitle>Aspiring Engineer</SubTitle>
             </div> 
             <div>
               <Title> Hello, I’m Lucas </Title>
