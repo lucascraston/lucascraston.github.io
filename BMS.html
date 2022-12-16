@@ -42,7 +42,7 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">November 6, 2022</span>
+									<span class="date">Updated Dec 16, 2022</span>
 									<h1>Single Cell Lithium<br />
 									Battery Management System</h1>
 									<p>This is a battery charger and protection board<br />
@@ -50,14 +50,30 @@
 									
 								</header>
 								
-									<img src="images/3D_render.png" width="400">
-									<img src="images/built_board.jpg" width = "400" style="height:392px">
+									<img src="images/3D_render.png" width="500">
+									<img src="images/built_board.jpg" width = "500" style="height:490px">
 								
 								<p>This board can charge a single Lithium cell while also protecting against 5 fault conditions. I use a MCP73831 for charging the
 									battery, and a BQ29707 for providing protection against over voltage, under voltage, over current discharge protection, over current charge 
 									protection, and short circuit protection. These features are critical for interfacing a lithium battery with any project.
 									
 								</p>
+								<p>
+									Version 1 is seen in the above images, while is works perfectly and meets all of my requirements, it has some problems. The biggest
+									problem with V1 is the cost. The majority of the space on the board is occupied by the 3 large MOSFETS that are seen in the images.
+									While those components take up alot of space, they are also very expensive, each costing around $1 - $2 in low quantities. Version 2 is 
+									already in the works, and to combat the FET cost issue, I have chosen a dual array package for the N-channel which is significantly smaller
+									and is closer to 60 cents a peice. same for the P-channel but in a single array. Shown below is the bill of materials for Version 1, it shows
+									the cost of each component and the total price for me to manufactur a board.
+								</p>
+								<img src="images/bom.png" width="1200">
+								<p>
+									$2.92 for the two N-Channel MOSFETS and $1.41 for the P-Channel. This means over 50% of the entire boards cost is taken up with those 3 
+									component, including the cost of getting the PCBs made. I am estimating that in Version 2, I will shave 3$ off the cost of these components alone.
+									Version 2 will incorporate more features, like 5 and 3.3 Volt power rails, 4 layer PCB, and more. This will add a significant cost to the board, but 
+									it will hopefully improve it  aswell.
+								</p>
+
 
 								
 							</section>
